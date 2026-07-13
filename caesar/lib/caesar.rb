@@ -2,13 +2,13 @@
 # modified alphabeths with key applied
 # guardclause for non-alphabeths
 def caesar_cipher(phrase, k = 0)
-  alphabeths = ('a'..'z').to_a
+  alphabeths = ("a".."z").to_a
   keys = alphabeths[k..-1] + alphabeths[0...k]
   phrase.downcase.split.map do |w|
     w.each_char.map do |chr|
       keys[alphabeths.index(chr)]
-    end.join('')
-  end.join(' ').capitalize
+    end.join("")
+  end.join(" ").capitalize
 end
 # CHEATSHEETS:
 # 65 <=> 90 is A..Z
