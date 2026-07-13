@@ -1,3 +1,3 @@
-require_relative("lib/caesar")
+require_relative('lib/caesar')
 
-puts caesar_cipher("string", 3)
+puts caesar_cipher('string', 3)

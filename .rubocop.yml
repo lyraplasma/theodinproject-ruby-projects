@@ -1,0 +1,11 @@
+inherit_from: ~/.rubocop.yml
+plugins:
+  - rubocop-performance
+AllCops:
+  NewCops: enable
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never

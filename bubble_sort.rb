@@ -19,6 +19,7 @@ irb(main):614> end;b
 => [0, 2, 2, 3, 4, 78]
 irb(main):615> 
 =end
+# rubocop: disable Metrics/AbcSize
 define_method(:bubble_sort) do |A|
   n = A.size
   while n >= 1
@@ -32,3 +33,4 @@ define_method(:bubble_sort) do |A|
   n = newn
   end; b
 end
+# rubocop: disable Metrics/AbcSize

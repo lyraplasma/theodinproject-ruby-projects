@@ -1,21 +1,17 @@
-=begin
-original list alphabeths
-modified alphabeths with key applied
-guardclause for non-alphabeths
-=end
-def caesar_cipher(phrase, k=0)
-  alphabeths = ("a".."z").to_a
-  keys = alphabeths[k..-1]+alphabeths[0...k]
-  phrase.downcase.split().map do |w|
+# original list alphabeths
+# modified alphabeths with key applied
+# guardclause for non-alphabeths
+def caesar_cipher(phrase, k = 0)
+  alphabeths = ('a'..'z').to_a
+  keys = alphabeths[k..-1] + alphabeths[0...k]
+  phrase.downcase.split.map do |w|
     w.each_char.map do |chr|
       keys[alphabeths.index(chr)]
-    end.join("")
-  end.join(" ").capitalize
+    end.join('')
+  end.join(' ').capitalize
 end
-=begin
-CHEATSHEETS:
-65 <=> 90 is A..Z
-97 <=> 122 is a..z
-
-TODO: deal that problematic punctations
-=end
+# CHEATSHEETS:
+# 65 <=> 90 is A..Z
+# 97 <=> 122 is a..z
+#
+# TODO: deal that problematic punctations
