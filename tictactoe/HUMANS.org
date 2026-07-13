@@ -1,0 +1,10 @@
+* Elements
+Board class
+Player class
+
+
+** What should be class?
+
+** Intance var?
+
+** Methods?
