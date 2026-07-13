@@ -3,11 +3,11 @@
 # guardclause for non-alphabeths
 def caesar_cipher(phrase, k = 0)
   alphabeths = ("a".."z").to_a
-  keys = alphabeths[k..-1] + alphabeths[0...k]
+  keys = alphabeths[k..] + alphabeths[0...k]
   phrase.downcase.split.map do |w|
     w.each_char.map do |chr|
       keys[alphabeths.index(chr)]
-    end.join("")
+    end.join
   end.join(" ").capitalize
 end
 # CHEATSHEETS:

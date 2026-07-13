@@ -1,4 +1,7 @@
-inherit_from: ~/.rubocop.yml
+inherit_from:
+  - .rubocop_todo.yml
+  - ~/.rubocop.yml
+
 plugins:
   - rubocop-performance
 AllCops:
@@ -9,3 +12,6 @@ Style/StringLiterals:
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
+inherit_gem:
+  prettier: rubocop.yml

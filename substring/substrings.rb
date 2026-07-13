@@ -9,6 +9,7 @@ def substrings(target_str, wordlists)
   end
 end
 
+# rubocop:disable all
 # That Regex.new is truly handy
 # I can't just insert the name of variable c on two slash
 # if c's value is "42"
@@ -19,3 +20,9 @@ end
 #
 # substrings("below", dictionary)
 # => {"below" => 1, "low" => 1}
+# rubocop:disable all
+
+
+
+
+
