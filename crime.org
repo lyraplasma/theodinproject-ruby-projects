@@ -1,0 +1,115 @@
+Inspecting 5 files
+CFCCC
+
+Offenses:
+
+Gemfile:3:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+source "https://rubygems.org"
+       ^^^^^^^^^^^^^^^^^^^^^^
+bubble_sort.rb:22:33: F: Lint/Syntax: formal argument cannot be a constant
+(Using Ruby 2.7 parser; configure using TargetRubyVersion parameter, under AllCops)
+define_method(:bubble_sort) do |A|
+                                ^
+bubble_sort.rb:26:9: F: Lint/Syntax: unexpected token kIN
+(Using Ruby 2.7 parser; configure using TargetRubyVersion parameter, under AllCops)
+    for in n (1...n) do
+        ^^
+bubble_sort.rb:34:1: F: Lint/Syntax: unexpected token kEND
+(Using Ruby 2.7 parser; configure using TargetRubyVersion parameter, under AllCops)
+end
+^^^
+caesar.rb:1:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+caesar.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+=begin
+^
+caesar.rb:6:27: C: Naming/MethodParameterName: Method parameter must be at least 3 characters long.
+def caesar_cipher(phrase, k=0)
+                          ^
+caesar.rb:6:28: C: [Correctable] Layout/SpaceAroundEqualsInParameterDefault: Surrounding space missing in default value assignment.
+def caesar_cipher(phrase, k=0)
+                           ^
+caesar.rb:7:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  alphabeths = ("a".."z").to_a
+                ^^^
+caesar.rb:7:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  alphabeths = ("a".."z").to_a
+                     ^^^
+caesar.rb:8:20: C: [Correctable] Style/SlicingWithRange: Prefer [k..] over [k..-1].
+  keys = alphabeths[k..-1]+alphabeths[0...k]
+                   ^^^^^^^
+caesar.rb:8:27: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+  keys = alphabeths[k..-1]+alphabeths[0...k]
+                          ^
+caesar.rb:9:24: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+  phrase.downcase.split().map do |w|
+                       ^^
+caesar.rb:12:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    end.join("")
+             ^^
+caesar.rb:13:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  end.join(" ").capitalize
+           ^^^
+caesar.rb:15:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+stock_picker.rb:1:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+stock_picker.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+=begin
+^
+stock_picker.rb:24:3: C: [Correctable] Style/ParallelAssignment: Do not use parallel assignment.
+  min_p, min_d, max_pft, best_d = prices[0],0,0,[0,0]
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_picker.rb:24:44: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  min_p, min_d, max_pft, best_d = prices[0],0,0,[0,0]
+                                           ^
+stock_picker.rb:24:46: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  min_p, min_d, max_pft, best_d = prices[0],0,0,[0,0]
+                                             ^
+stock_picker.rb:24:48: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  min_p, min_d, max_pft, best_d = prices[0],0,0,[0,0]
+                                               ^
+stock_picker.rb:24:51: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  min_p, min_d, max_pft, best_d = prices[0],0,0,[0,0]
+                                                  ^
+stock_picker.rb:26:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if p < min_p then min_p, min_d = p, d end
+    ^^
+stock_picker.rb:26:23: C: [Correctable] Style/ParallelAssignment: Do not use parallel assignment.
+    if p < min_p then min_p, min_d = p, d end
+                      ^^^^^^^^^^^^^^^^^^^
+stock_picker.rb:28:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if pft > max_pft then max_pft, best_d = pft, [min_d, d] end
+    ^^
+stock_picker.rb:28:27: C: [Correctable] Style/ParallelAssignment: Do not use parallel assignment.
+    if pft > max_pft then max_pft, best_d = pft, [min_d, d] end
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+stock_picker.rb:29:6: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+  end; best_d
+     ^
+substrings.rb:1:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+substrings.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+=begin
+^
+substrings.rb:9:13: C: [Correctable] Style/EachWithObject: Use each_with_object instead of reduce.
+  wordlists.reduce(Hash.new(0)) do |acc,v|
+            ^^^^^^
+substrings.rb:9:40: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  wordlists.reduce(Hash.new(0)) do |acc,v|
+                                       ^
+substrings.rb:10:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if Regexp.new(v).match?(target_str)
+    ^^
+substrings.rb:12:8: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+    end; acc
+       ^
+substrings.rb:16:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+
+5 files inspected, 35 offenses detected, 31 offenses autocorrectable
