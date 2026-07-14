@@ -3,4 +3,12 @@ class Board
   def initialize
     @board = Array.new(3){Array.new(3) {(1..9).map {|n| n }}}[0][0]
   end
+
+  def draw
+    puts ""
+  end
+  def win?(player, other)
+    player.
+      other.
+  end
 end

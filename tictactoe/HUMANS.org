@@ -2,9 +2,98 @@
 Board class
 Player class
 
-
 ** What should be class?
+
 
 ** Intance var?
 
 ** Methods?
+visualizing current coordinates
+crd = Array.new(9) {rand >= 0.5 ? "x" : "o"}
+indent = 0;crd.each do |n|
+print n
+indent += 1
+if indent == 3
+puts ""
+indent = 0
+;;
+
+
+** Misc
+Board's { a: "", b: "", ..., i: ""}
+a b c
+d e f
+g h i
+
+Winning condition:
+a,b,c
+d,e,f
+g,h,i
+a,d,g
+b,e,h
+c,f,i
+a,e,i
+c,e,g
+
+use #dig
+
+Draw board? <- Board class>
+
+*** game loop
+board object will handle score?
+let score, p1, p2, board??
+let p1's states
+let p2's states
+
+while true
+print board
+1|2|3
+4|5|6
+7|8|9
+
+NOTE: p1's atk always "x" :CONVENTION thingie
+ask player1 else ask again
+if player1's match? e.g "a"
+"a"'s index let = player1's
+(should be ommited)pl = "x";p1_l="a"; A[A.index(p1)]
+
+
+then
+
+ask player2 else ask again
+
+map all cells
+compare winning condition
+else goto print board
+
+
+** proto
+
+while true
+print board
+ask p1
+ask p2
+#+BEGIN_SRC ruby
+  p1, p2, str
+  
+  while true
+    draw
+    print "p1 "
+    p1 = gets.chomp
+    A[A.index(p1)] = "x"
+    print "p2 "
+    p2 = gets.chomp
+    A[A.index(p2)] = "o"
+    end
+  def draw # should be board obj?
+    # prints board of ('a'..'i').to_a
+    end
+#+END_SRC
+
+
+
+
+
+    
+
+
