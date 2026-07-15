@@ -2,6 +2,7 @@ class Board
   attr_accessor :board
   def initialize
     @board = ('a'..'i').to_a
+    
   end
   def reset_board
     @board = ('a'..'i').to_a

@@ -1,4 +1,9 @@
 require_relative "game/board"
-puts "game loaded"
+X = "xxx"
+O = "ooo"
+def game
+
+end
+
 
 
