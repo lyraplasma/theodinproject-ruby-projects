@@ -13,6 +13,9 @@ class Board
     puts "\t\t\t#{@board[6]}|#{@board[7]}|#{@board[8]}"    
     puts "\t\t==================================="    
   end
+  def take_player_move(player, m)
+    self.board[self.board.find_index(player.player_move)] = m
+  end
   def illegal_move?(player)
     self.board.find_index(player.player_move) == nil
   end

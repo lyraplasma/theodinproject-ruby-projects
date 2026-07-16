@@ -1,10 +1,14 @@
 require "colorize"
 class Player
-  attr_accessor :player_move, :name
+  attr_accessor :player_move, :name, :score
 #  def am_i_winning?
   #  end
   def initialize(name)
     self.name = name
+    self.score = 0
+  end
+  def add_points
+    self.score += 1
   end
   def take_move
     loop do
@@ -13,15 +17,8 @@ class Player
       break if /[a-i]/.match?(self.player_move)
     end
   end
-  # implmnt valdition here?
-
 end
 =begin
-TASK: Add plyr class
-Add input validation for player's?
-
-Player class will be given a #win? methods?
-
 Player obj
 vars: player_mv,
 instance arg of board from Board class?
@@ -42,3 +39,5 @@ hw bout using mixins? modules? shared methods?
 
 ====================
 =end
+
+
