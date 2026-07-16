@@ -1,0 +1,22 @@
+* CLI mastermind
+
+requires colored texts, colorize might be useful
+
+std mastermind:
+6 diff colors(use numbers)
+4 slots for pegs
+12 guess(12 rounds)
+
+** Comp::Mastermind , Human::codebreaker
+computer select rand (1..6)
+game start then human will guess
+comp will check human's input
+
+** refctr, at game start human will be prompted; mastermind or codebreaker
+- implement comp's mthds as codebreaker
+
+** write dumb comp using rand
+
+
+
+
