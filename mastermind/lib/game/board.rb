@@ -8,6 +8,13 @@ class Board
   def clear_checked_slots
     self.check_slots = []
   end
+  def add_number_slot(round)
+    4.times.each_with_index do |slot|
+      self.display
+      print "\tROUND: #{round+1}\n\t\tslot#{slot+1}1-6: "
+      self.board[round][slot] = Kernel.gets.chomp
+    end
+  end
   def display
     # TODO: rfctr ltr
     # 0:1234

@@ -26,7 +26,7 @@ class CodeMaker -> arr instance -> secret_code rand gen
 class CodeBreaker?
 =end       
     if a[idx][i] == comp_mstrmnd[i] then check << true else check << false end #=  # board.check_slots << true : false
-    #                  ^^^^^^^^^^^^ CodeMaker's instance? ltr
+    #x                  ^^^^^^^^^^^^ CodeMaker's instance? ltr
   end
 ####################################################################################################
   4.times.with_index do |j| # board.check_hints(check_array) # board have hint instance?

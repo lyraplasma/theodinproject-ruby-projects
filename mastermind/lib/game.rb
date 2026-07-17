@@ -6,15 +6,18 @@ mbrd = Board.new
 cdemkr = Computer.new
 12.times.with_index do |idx|
   mbrd.clear_checked_slots # @check_slots = []
-  4.times.with_index do |jdx|
+=begin
+  4.times.with_index do |jdx| # mbrd.add_number_slot(idx)
     mbrd.display
-    puts cdemkr.secret_code
+#    puts cdemkr.secret_code #DEBUG:TEMP
     print "\tROUND: #{idx+1}\n\t\tslot#{jdx}1-6: "
     mbrd.board[idx][jdx] = Kernel.gets.chomp # board[][] ????
     puts "\t\t\tCurrent input: #{mbrd.board[idx][jdx]}"
   end
+=end
+  mbrd.add_number_slot(idx) # idx == n rounds
   4.times.with_index do |i|
-    if mbrd.board[idx][i] == cdemkr.secret_code[i] # cause: = ???? asignment at if statement?
+    if mbrd.board[idx][i] == cdemkr.secret_code[i] # cause: = ???? asignment at if statement? YES
       mbrd.check_slots << true
       puts mbrd.check_slots
     else
