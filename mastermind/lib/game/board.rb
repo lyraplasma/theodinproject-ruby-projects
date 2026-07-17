@@ -1,11 +1,15 @@
-class MasterMindBoard
-  attr_accessor :board, :hints
+class Board
+  attr_accessor :board, :hints, :check_slots
   def initialize
     self.board = Array.new(12){Array.new(4){"[]"}}
     self.hints = Array.new(12){Array.new(4){"()"}}
+    @check_slots = []
+  end
+  def clear_checked_slots
+    self.check_slots = []
   end
   def display
-    # rfctr ltr
+    # TODO: rfctr ltr
     # 0:1234
     b = self.board
     puts "\t____________________________________________"
