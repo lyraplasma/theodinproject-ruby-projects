@@ -11,8 +11,11 @@ class Board
   def add_number_slot(round)
     4.times.each_with_index do |slot|
       self.display
-      print "\tROUND: #{round+1}\n\t\tslot#{slot+1}1-6: "
-      self.board[round][slot] = Kernel.gets.chomp
+      print "\t\tROUND #{round+1}:\n\t\tSLOT##{slot+1} (1-6): "
+      while self.board[round][slot] = Kernel.gets.chomp
+        print "\t\t[WARN] Enter 1-6: "
+        break if self.board[round][slot].to_i.between?(1,6)
+      end
     end
   end
   def match_secret_code(round, secret_code)
@@ -23,6 +26,17 @@ class Board
         self.check_slots << false
       end
     end
+  end
+  def display_hints(round)
+    4.times.with_index do |slot|
+      self.hints[round][slot] = self.check_slots[slot]
+    end
+    puts "=============================="
+    self.hints[round].each{|h| if h then puts "\t| / |" else puts "\t| X |" end}
+    puts "=============================="    
+  end
+  def win?
+    self.check_slots.join.eql?("true"*4)
   end
   def display
     # TODO: rfctr ltr
