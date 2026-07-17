@@ -16,6 +16,8 @@ cdemkr = Computer.new
   end
 =end
   mbrd.add_number_slot(idx) # idx == n rounds
+  mbrd.match_secret_code(idx, cdemkr.secret_code)
+=begin
   4.times.with_index do |i|
     if mbrd.board[idx][i] == cdemkr.secret_code[i] # cause: = ???? asignment at if statement? YES
       mbrd.check_slots << true
@@ -25,6 +27,7 @@ cdemkr = Computer.new
       puts mbrd.check_slots
     end
   end
+=end
   4.times.with_index do |j|
     mbrd.hints[idx][j] = mbrd.check_slots[j]
   end

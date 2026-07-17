@@ -15,6 +15,15 @@ class Board
       self.board[round][slot] = Kernel.gets.chomp
     end
   end
+  def match_secret_code(round, secret_code)
+    4.times.with_index do |slot|
+      if self.board[round][slot] == secret_code[slot]
+        self.check_slots << true
+      else
+        self.check_slots << false
+      end
+    end
+  end
   def display
     # TODO: rfctr ltr
     # 0:1234
