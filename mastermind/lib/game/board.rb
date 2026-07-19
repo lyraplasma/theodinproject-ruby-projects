@@ -8,7 +8,7 @@ class Board
   def clear_checked_slots
     self.check_slots = []
   end
-  def add_number_slot(round)
+  def add_number_slot(round) # codebreaker's 
     4.times.each_with_index do |slot|
       self.display
       print "\t\tROUND #{round+1}:\n\t\tSLOT##{slot+1} (1-6): "
@@ -21,18 +21,31 @@ class Board
   def match_secret_code(round, secret_code)
     4.times.with_index do |slot|
       if self.board[round][slot] == secret_code[slot]
-        self.check_slots << true
+      # [/][X][ ]
+      # ^^^^^^^^ Correct place, Incorrect Place, Not in Secret code              
+        self.check_slots << "c"
       else
-        self.check_slots << false
+        if self.board[r].include?(secret_code.split(""))
+          self.check_slots << "w"
+        end
+        self.check_slots << "[]"
       end
     end
-  end
+  end  
   def display_hints(round)
     4.times.with_index do |slot|
       self.hints[round][slot] = self.check_slots[slot]
     end
     puts "=============================="
-    self.hints[round].each{|h| if h then puts "\t| / |" else puts "\t| X |" end}
+    self.hints[round].each do |h|
+      if h.eql?("c")
+        puts "\t| / |"
+      elsif h.eql?("w") # wrong_place
+        puts "\t| X |"
+      else
+        puts "\t|[ ]|"
+      end
+    end
     puts "=============================="    
   end
   def win?
