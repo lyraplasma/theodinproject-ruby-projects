@@ -8,6 +8,7 @@ class Board
   def clear_checked_slots
     self.check_slots = []
   end
+################################################## REMOVE vv
   def add_number_slot(round) # codebreaker's 
     4.times.each_with_index do |slot|
       self.display
@@ -18,6 +19,7 @@ class Board
       end
     end
   end
+################################################## REMOVE ^^
   def match_secret_code(round, secret_code)
     4.times.with_index do |slot|
       if self.board[round][slot] == secret_code[slot]
@@ -25,7 +27,7 @@ class Board
       # ^^^^^^^^ Correct place, Incorrect Place, Not in Secret code              
         self.check_slots << "c"
       else
-        if self.board[r].include?(secret_code.split(""))
+        if self.board[round].include?(secret_code.split(""))
           self.check_slots << "w"
         end
         self.check_slots << "[]"
