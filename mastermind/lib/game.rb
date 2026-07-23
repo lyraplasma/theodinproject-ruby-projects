@@ -3,7 +3,7 @@ require_relative "game/board"
 require_relative "game/human"
 
 class Game
-  attr_accessor :b, :c
+  attr_accessor :b, :c, :h
   def initialize
     #################### TODO
     @b = Board.new
@@ -39,9 +39,11 @@ class Computer < Player, class Human < Player
 
 
 #      b.add_number_slot(round) # << comp or humn 's codebreaker
-      b.match_secret_code(round, c.secret_code) # still board's?
-      b.display_hints(round) # board's
-      if b.win? then puts "\t\tYou win!"; return true end # should board handle the judge?
+      @b.match_secret_code(round, @c.secret_code) # still board's?
+      @b.display_hints(round) # board's
+########################################
+########################################
+      if @b.win? then puts "\t\tYou win!"; return true end # should board handle the judge?
       # ^^^^^^ or codemaker's?
     end
     return false

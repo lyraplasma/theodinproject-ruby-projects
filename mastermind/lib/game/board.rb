@@ -51,7 +51,7 @@ class Board
     puts "=============================="    
   end
   def win?
-    self.check_slots.join.eql?("true"*4)
+    self.check_slots.join.eql?("cccc")
   end
   def display
     # TODO: rfctr ltr
