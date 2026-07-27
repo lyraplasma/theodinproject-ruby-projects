@@ -13,4 +13,18 @@ when "breaker" then self...............................
     self.generate_secret_code
     # ^^^^^^^^^^^ from CodeMaker's
   end
+  # Overrides < Player < CodeBreaker's
+  def place_numbers(round, board)
+    # vvvvv Fancy loading animation
+    self.fancy_animation(100)
+    
+  end
+
+  private
+  def fancy_animation(epoch)
+    epoch.times do
+      print "\r\r>> #{rand} <<"
+      sleep 0.1
+    end
+  end
 end
