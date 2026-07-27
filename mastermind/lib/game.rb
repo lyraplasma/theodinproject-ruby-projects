@@ -23,9 +23,9 @@ adding @role, create another class Player << includes Codemaker, Codebreaker and
 it'll avoid dups of include on Humn and Comp,
 class Computer < Player, class Human < Player
 =end
-  # CACHE: implement how to separate modes of human as maker or breaker as args on game class
   def play?
-      self.get_role # human's role
+    self.get_role # human's role
+    @h.ask_secret_code if %w(2 maker codemaker).include?(@h.role)
 
 
     12.times.with_index do |round|
@@ -33,13 +33,15 @@ class Computer < Player, class Human < Player
       b.clear_checked_slots # still board's?
       if %w(codebreaker breaker 1).include?(@h.role)
         @h.place_numbers(round, @b)
-      elsif %w(2 maker codemaker).include?(@h.role)
+        @b.match_secret_code(round, @c.secret_code)
+      elsif %w(2 maker codemaker).include?(@h.role) # INPROGRESS: CACHE : comp's breaker role
         @c.place_numbers(round, @b)
+        @b.match_secret_code(round, @h.secret_code) 
       end
 
 
 #      b.add_number_slot(round) # << comp or humn 's codebreaker
-      @b.match_secret_code(round, @c.secret_code) # still board's?
+
       @b.display_hints(round) # board's
 ########################################
 ########################################
@@ -62,3 +64,5 @@ class Computer < Player, class Human < Player
   end
 end
 # TODO: Migrate board's input methods on codebreaker class DONE?CONFIRMING...
+
+Game.new
