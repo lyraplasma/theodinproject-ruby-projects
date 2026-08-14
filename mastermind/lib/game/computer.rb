@@ -17,7 +17,11 @@ when "breaker" then self...............................
   def place_numbers(round, board)
     # vvvvv Fancy loading animation
     self.fancy_animation(100)
-    
+=begin
+Sypnosis:
+computer might need to get the board's data -> list of hints
+
+=end    
   end
 
   private

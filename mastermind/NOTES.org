@@ -17,6 +17,9 @@ comp will check human's input
 
 ** write dumb comp using rand
 
+** My notes about Minimax
+Minimizing the possible loss for a worst case scenario
 
-
-
+On ruby's minmax
+[1,2,3,4] => [1,4]
+"some example of words here".split.minmax{|a,b| a.size <=> b.size}
