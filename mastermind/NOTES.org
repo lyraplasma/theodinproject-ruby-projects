@@ -23,3 +23,13 @@ Minimizing the possible loss for a worst case scenario
 On ruby's minmax
 [1,2,3,4] => [1,4]
 "some example of words here".split.minmax{|a,b| a.size <=> b.size}
+
+** where did i stop??
+mastermind/lib/game.rb
+37:      elsif %w(2 maker codemaker).include?(@h.role) # INPROGRESS: CACHE : comp's breaker role
+
+- Wed Aug 19 20:35:39 2026:: observation
+player's codebreaker works fine.
+
+Wed Aug 19 22:15:28 2026
+looks like human's codebreaker works fine
